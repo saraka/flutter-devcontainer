@@ -4,8 +4,6 @@ ENV ANDROID_HOME="/android-sdk" \
     PATH="/android-sdk/tools/bin:/android-sdk/build-tools:/android-sdk/platform-tools:${PATH}" \
     PATH="/flutter/bin:${PATH}" \
     SHELL="/bin/bash" \
-    http_proxy="http://172.17.0.1:10809" \
-    https_proxy="http://172.17.0.1:10809" \
     PUB_HOSTED_URL="https://pub.flutter-io.cn" \
     FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 
@@ -30,4 +28,7 @@ RUN tar xf flutter_linux_1.20.3-stable.tar.xz
 RUN rm flutter_linux_1.20.3-stable.tar.xz
 
 RUN flutter config --no-analytics
+
+ENV http_proxy="http://172.17.0.1:10809" \
+    https_proxy="http://172.17.0.1:10809"
 
